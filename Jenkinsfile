@@ -14,12 +14,11 @@ pipeline {
         stage('DEPLOY'){
             steps{
                 sh 'mvn clean package'
-                deploy("**/*.war", 'localhost', "payslip_app_$BUILD_NUMBER")
+                sh "curl -v -u tomcat:tomcat -T ${'**/*.war'} 'http://${localhost}:8889/manager/text/deploy?path=${payslip_app_$BUILD_NUMBER}&update=true'"
+}
+
             }
         }
     }
 }
-        // Deploy file to tomcat
-def deploy(file, host, context) {
-sh "curl -v -u tomcat:tomcat -T ${file} 'http://${host}:8889/manager/text/deploy?path=${context}&update=true'"
-}
+        
