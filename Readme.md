@@ -1,3 +1,3 @@
-## Payslip app with Unit test and Integration Test
+## Payslip app with Jenkinsfile
  ##### checkstyle sonarqube
  ## testing
