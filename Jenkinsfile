@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                build 'payslip-jenkinsfile_master'
+                build 'Payslip-Jenkinsfile-pipeline'
             }
         }
         stage('TEST'){
