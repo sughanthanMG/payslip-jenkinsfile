@@ -13,7 +13,7 @@ pipeline {
         }
         stage('DEPLOY'){
             steps{
-                package 'payslip-source'
+                package
                 deploy("**/*.war", 'localhost', "payslip_app_$BUILD_NUMBER")
             }
         }
