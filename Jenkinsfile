@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                build 'payslip-source'
+                build 'payslip-test'
             }
         }
         stage('TEST'){
