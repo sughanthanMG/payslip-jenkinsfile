@@ -3,11 +3,12 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                build 'Payslip-app-tests'
+                sh 'mvn compile'
             }
         }
         stage('TEST'){
             steps{
+                sh 'mvn test'
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
             }
         }
