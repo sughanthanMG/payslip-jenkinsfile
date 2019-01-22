@@ -13,7 +13,7 @@ pipeline {
         }
         stage('DEPLOY'){
             steps{
-                package
+                sh 'mvn clean package'
                 deploy("**/*.war", 'localhost', "payslip_app_$BUILD_NUMBER")
             }
         }
