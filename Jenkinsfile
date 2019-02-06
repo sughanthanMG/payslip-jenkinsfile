@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                build 'payslip-source'
+                build 'payslip'
             }
         }
         stage('TEST'){
@@ -15,8 +15,7 @@ pipeline {
             }
         }
         stage('DEPLOY'){
-            steps{
-                build 'payslip-build'
+            steps{           
                 build 'payslip-deploy'
             }
         }
